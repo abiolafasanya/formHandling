@@ -1,5 +1,5 @@
 <!-- Pocessing page of registration form input -->
-
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <?php
 
     // Starting Session
@@ -42,12 +42,10 @@
         );
     }
   
-//  Login Authentication
+        //  Login Authentication Section
 
         if(isset($_POST['login'])){
 
-            $username = $_POST['user'];
-            $hashed_password = $_POST['pass'];
             
             function test_input($data) {
                 $data = trim($data);
@@ -60,6 +58,11 @@
             $name = test_input($_POST['name']);
             $password = test_input($_POST['password']);
             
+            //form hidden field from signin || login form
+            $username = $_POST['user'];
+            $hashed_password = $_POST['pass'];
+            
+            //password verification and input check
             if(password_verify($password, $hashed_password) && $username === $name){
             
             session_start();
@@ -73,7 +76,11 @@
             
             else{
                 // Display an error message if password is not valid
-              echo  $password_err = "The password you entered was not valid.";
+              echo  $password_err = "<div class='alert alert-danger'>
+              The password you entered was not valid!.
+              <a href='index.php?signin'>back</a>
+              </div>";
+              
             }  
         
         }

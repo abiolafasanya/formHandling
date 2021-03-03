@@ -13,7 +13,7 @@ if(isset($_GET['logout'])){
     // Destroy the session.
     session_destroy();
     
-    // Redirect to login page
+    // Redirect to Signin form
     
     header("location: index.php?signin");
     exit;
@@ -25,7 +25,7 @@ if(isset($_GET['logout'])){
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="style.css">   
+    <link rel="stylesheet" href="css/bootstrap.min.css">  
 <body>
     <div class="page-header">
         <h1>Hi, <b><?php echo $_SESSION["username"]; ?></b>. Welcome to our site.</h1>

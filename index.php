@@ -49,13 +49,39 @@
                     <input type="hidden" name="pass" value="<?= $pass; ?>">
                     <div class="form-group">
                         <button type="submit" class="btn btn-success" name="login">Save</button>
+                        <p>Don't have an account? <a href="index.php">SignUp here</a>.</p>
                     </div>
                 </form>
        
             </div>
-            <?php else: ?>
 
-      
+            <?php elseif(isset($_GET['signin'])): ?>
+                <div class="row justify-content-center mt-5">
+                
+                    <form action="process.php" method="post" enctype="multipart/form-data">
+                        <h2>Login</h2>
+
+                        <div class="form-group">
+                            <label for="name">Username</label>
+                            <input type="text" name="name" class="form-control" required>
+                            <!-- username -->
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="password" name="password" class="form-control" required>
+                            <!-- password -->
+                        </div>
+                        <input type="hidden" name="user" value="<?= $user;?>">
+                        <input type="hidden" name="pass" value="<?= $pass; ?>">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" name="login">Save</button>
+                            <p>Don't have an account? <a href="index.php">SignUp here</a>.</p>
+                        </div>
+                    </form>
+       
+                 </div>
+
+            <?php else: ?>
             <div class="row justify-content-center mt-5">
                 <form action="process.php" method="post" enctype="multipart/form-data">
                     <h2>SignUp</h2>
@@ -83,40 +109,13 @@
                         <input type="submit" class="btn btn-primary" name="register" value="Submit">
                         <input type="reset" class="btn btn-default" value="Reset">    
                     
-                        <p>Already have an account? <a href="login.php?signin">Login here</a>.</p>  
+                        <p>Already have an account? <a href="index.php?signin">Login here</a>.</p>  
                     </div>
                 </form>
                     
             </div>
         <?php endif; ?>
-
-                <?php
-                if(isset($_GET['signin'])): ?>
-
-        <div class="row justify-content-center mt-5">
-                
-                <form action="process.php" method="post" enctype="multipart/form-data">
-                    <h2>Login</h2>
-
-                    <div class="form-group">
-                        <label for="name">Username</label>
-                        <input type="text" name="name" class="form-control" required>
-                        <!-- username -->
-                    </div>
-                    <div class="form-group">
-                        <label for="password">password</label>
-                        <input type="password" name="password" class="form-control" required>
-                        <!-- password -->
-                    </div>
-                    <input type="hidden" name="user" value="<?= $user;?>">
-                    <input type="hidden" name="pass" value="<?= $pass; ?>">
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success" name="login">Save</button>
-                    </div>
-                </form>
-       
-            </div>
-            <?php endif; ?>
+           
     </div>
 </body>
 </html>
