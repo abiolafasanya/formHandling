@@ -47,6 +47,7 @@
         if(isset($_POST['login'])){
 
             
+            // input validaation
             function test_input($data) {
                 $data = trim($data);
                 $data = stripslashes($data);
