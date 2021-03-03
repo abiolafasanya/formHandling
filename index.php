@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>REGISTRATION FORM PHP</title>
+    <title>PHP FORM HANDLING</title>
 </head>
 <body>
     <!-- all input are being processed in process.php -->
