@@ -46,8 +46,8 @@
 
         if(isset($_POST['login'])){
 
-           echo $username = $_POST['user'];
-           echo $hashed_password = $_POST['pass'];
+            $username = $_POST['user'];
+            $hashed_password = $_POST['pass'];
             
             function test_input($data) {
                 $data = trim($data);
